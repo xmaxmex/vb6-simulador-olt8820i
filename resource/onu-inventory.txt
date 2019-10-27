@@ -1,0 +1,5 @@
+                 Serial     Vendor    Model      ONT           Software
+ ONU Name         Number      ID       ID      Version          Version
+=============== =========== ======= ======= =============== ===============
+gpon 1 onu 64   03726863    ZNTS    142NG   S3.1.243        S3.1.243
+gpon 1 onu 128  43020000    ITBS    110Gi   9100114         1.0.15

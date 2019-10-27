@@ -1,0 +1,29 @@
+Data: 12/07/2019
+
+LEIAME.txt
+
+
+Simulador OLt-8820i intelbras
+=============================
+
+Este programa simula algumas funções da CLI do equipamento GPON OLT-8820i da intelbras.
+
+Vários comandos são suportados, basta utiliza-los igual a CLI, por exemplo o comando help.
+
+
+Porta de Conexão
+================
+
+Utilize a porta 34 TCP.
+
+Usuário: intelbras
+Sem senha.
+
+
+
+Maiores informações e Sugestões:
+
+
+Claudemir P. da Luz Jr.
+
+<xmaxmex@gmail.com>

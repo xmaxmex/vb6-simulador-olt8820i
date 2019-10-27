@@ -1,0 +1,9 @@
+             VLAN/
+  Type     UNI-VLAN      Mode               Bridge             State
+========= =========== ========== ============================ =======
+uplink    1000/--     untagged   eth 2 vlan 1000              Up
+tls       2000/--     tagged     gpon 1 onu 1 gem 259         Down
+tls       2000/--     tagged     gpon 1 onu 64 gem 258        Up
+downlink  1000/--     tagged     gpon 1 onu 128 gem 257       Up
+=====================================================================
+Total: 4

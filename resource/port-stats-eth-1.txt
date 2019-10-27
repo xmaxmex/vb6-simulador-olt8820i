@@ -1,0 +1,14 @@
+Interface Name                    : eth 1
+Operational Status                : Up
+Received Bytes                    : 1580990785
+Received Unicast Packets          : 1275104
+Received Multicast Packets        : 72899
+Received Broadcast Packets        : 55515
+Received Errors                   : 0
+Transmitted Bytes                 : 839562158
+Transmitted Unicast Packets       : 1313749
+Transmitted Multicast Packets     : 7284
+Transmitted Broadcast Packets     : 1449
+Transmitted Errors                : 0
+Speed Bits per Second             : *** n/a ***
+Speed Megabits per Second         : 100

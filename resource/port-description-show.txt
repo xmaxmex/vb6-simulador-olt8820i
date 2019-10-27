@@ -1,0 +1,4 @@
+   Interface               Description
+=============== =================================
+gpon 1          pon1-principal
+eth 2           uplink-provedor

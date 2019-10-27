@@ -1,0 +1,10 @@
+GPON Temperature Voltage Tx Bias Current  Tx Power    Rx Power   End Of Life Status
+==== =========== ======= =============== =========== =========== ==================
+ 1       31 C    3.262 V      13 mA       3.772 dBm   -1.462 dBm         OK
+ 2        --        --          --            --          --     SFP is Not Present
+ 3        --        --          --            --          --     SFP is Not Present
+ 4        --        --          --            --          --     SFP is Not Present
+ 5        --        --          --            --          --     SFP is Not Present
+ 6        --        --          --            --          --     SFP is Not Present
+ 7        --        --          --            --          --     SFP is Not Present
+ 8       32 C    3.143 V      36 mA       4.124 dBm    -inf dBm          OK

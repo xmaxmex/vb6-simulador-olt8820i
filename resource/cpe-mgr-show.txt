@@ -1,0 +1,13 @@
+        CPE Manager public side interface:
+                 Interface   Public IP        VLAN
+                -----------------------------------
+                out of band  192.168.10.1/24  1
+
+        CPE Manager local management network:
+                IP:    1.0.0.1/8
+
+
+        Managed CPE Interface Configuration:
+ Interface                      Local IP        Telnet  HTTP
+-------------------------------------------------------------
+gpon 1 onu 64  gem 260  [UP]    1.1.16.65       51921   51922

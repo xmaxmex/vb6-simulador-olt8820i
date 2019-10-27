@@ -1,0 +1,35 @@
+alarm                         Alarm commands
+backup                        Backup the configuration
+bridge                        Bridge commands
+bridge-path                   Bridge-path commands
+card                          Card Information
+changepass                    Change current user password
+cpe                           CPE commands
+cpe-mgr                       CPE manager commands
+date                          View the current date and time of system
+dns-server                    Configure a domain name server
+file                          Manager files system, web download and upload files
+firmware                      Manage equipment firmware
+gpon-traffic-profile          GTP commands
+history                       Command history
+interface                     Interface command
+linkagg                       Configure Manual Link Agregation
+log                           Manage/View logging
+logout                        Logout from current session
+ntp-client                    Configure NTP Client
+olt                           GPON OLT commands
+onu                           GPON ONU commands
+ping                          Ping an IPv4 host
+port                          Port commands
+qos                           Configuration of Class of Service (CoS) for Traffic Forwarding Queue mapping
+restore                       Restore configuration from a local file
+route                         Route command
+rule                          Configuration of the packet rule filters
+set2default                   Restore default configuration and reboot
+shadow                        Turn on/off shadow session
+shelfctrl                     Display information about the status of the system
+snmp                          Configure SNMP agent paramenters
+syslog-destination            Send messages to a syslog server
+systemreboot                  Reset the system and restore the system configuration
+telnet                        Run a telnet session
+user                          Configure local users

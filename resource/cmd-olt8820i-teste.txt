@@ -1,0 +1,573 @@
+OLT 8820 i
+----------
+
+
+  _____ _   _ _______ ______ _      ____  _____             _____
+ |_   _| \ | |__   __|  ____| |    |  _ \|  __ \     /\    / ____|
+   | | |  \| |  | |  | |__  | |    | |_) | |__) |   /  \  | (___
+   | | | . ` |  | |  |  __| | |    |  _ <|  _  /   / /\ \  \___ \
+  _| |_| |\  |  | |  | |____| |____| |_) | | \ \  / ____ \ ____) |
+ |_____|_| \_|  |_|  |______|______|____/|_|  \_\/_/    \_\_____/
+
+           ____  _   _______ ___   ___ ___   ___  _
+          / __ \| | |__   __/ _ \ / _ \__ \ / _ \(_)
+         | |  | | |    | | | (_) | (_) | ) | | | |_
+         | |  | | |    | |  > _ < > _ < / /| | | | |
+         | |__| | |____| | | (_) | (_) / /_| |_| | |
+          \____/|______|_|  \___/ \___/____|\___/|_|
+
+
+Intelbras S.A.
+Industria de Telecomunicacao Eletronica Brasileira
+
+intelbras-olt>
+
+
+intelbras-olt> help
+alarm                         Alarm commands
+backup                        Backup the configuration
+bridge                        Bridge commands
+bridge-path                   Bridge-path commands
+card                          Card Information
+changepass                    Change current user password
+cpe                           CPE commands
+cpe-mgr                       CPE manager commands
+date                          View the current date and time of system
+dns-server                    Configure a domain name server
+file                          Manager files system, web download and upload files
+firmware                      Manage equipment firmware
+gpon-traffic-profile          GTP commands
+history                       Command history
+interface                     Interface command
+linkagg                       Configure Manual Link Agregation
+log                           Manage/View logging
+logout                        Logout from current session
+ntp-client                    Configure NTP Client
+olt                           GPON OLT commands
+onu                           GPON ONU commands
+ping                          Ping an IPv4 host
+port                          Port commands
+qos                           Configuration of Class of Service (CoS) for Traffic Forwarding Queue mapping
+restore                       Restore configuration from a local file
+route                         Route command
+rule                          Configuration of the packet rule filters
+set2default                   Restore default configuration and reboot
+shadow                        Turn on/off shadow session
+shelfctrl                     Display information about the status of the system
+snmp                          Configure SNMP agent paramenters
+syslog-destination            Send messages to a syslog server
+systemreboot                  Reset the system and restore the system configuration
+telnet                        Run a telnet session
+user                          Configure local users
+
+
+
+
+intelbras-olt> se
+%% Invalid command
+
+
+Dois tabs
+---------
+
+intelbras-olt>
+alarm                  cpe-mgr                interface              ping                   shadow
+backup                 date                   linkagg                port                   shelfctrl
+bridge                 dns-server             log                    qos                    snmp
+bridge-path            file                   logout                 restore                syslog-destination
+card                   firmware               ntp-client             route                  systemreboot
+changepass             gpon-traffic-profile   olt                    rule                   telnet
+cpe                    history                onu                    set2default            user
+intelbras-olt>
+
+
+Setar data
+-----------
+
+intelbras-olt> date
+2019-03-23 22:13:46
+intelbras-olt> d
+date         dns-server
+intelbras-olt> date
+<enter>   set
+intelbras-olt> date
+<enter>   set
+intelbras-olt> date set
+                        Example: yyyymmddhhmm
+intelbras-olt> date set 201904031028
+intelbras-olt>
+
+
+
+
+
+
+
+
+intelbras-olt> onu show gpon 1
+
+Free slots in GPON Link 1:
+=======================================
+  1    2    3    4    5    6    7    8
+  9   10   11   12   13   14   15   16
+ 17   18   19   20   21   22   23   24
+ 25   26   27   28   29   30   31   32
+ 33   34   35   36   37   38   39   40
+ 41   42   43   44   45   46   47   48
+ 49   50   51   52   53   54   55   56
+ 57   58   59   60   61   62   63   64
+ 65   66   67   68   69   70   71   72
+ 73   74   75   76   77   78   79   80
+ 81   82   83   84   85   86   87   88
+ 89   90   91   92   93   94   95   96
+ 97   98   99  100  101  102  103  104
+105  106  107  108  109  110  111  112
+113  114  115  116  117  118  119  120
+121  122  123  124  125  126  127  128
+
+Discovered serial numbers
+==============================================
+sernoID   Vendor  Serial Number   Model       Time Discovered
+1         ZNTS    43020000        110Gi       Nov 08 12:34:22 2018
+3         ZNTS    03726863        142NG       Nov 08 12:39:52 2018
+
+
+
+Provisionar
+-----------
+
+intelbras-olt> onu set gpon 1 onu 128 id 1
+% The following parameter is required:
+meprof                         Set a profile for this ONU
+
+intelbras-olt> onu set gpon 1 onu 128 id 1 meprof intelbras-
+intelbras-110       intelbras-121w      intelbras-142nw
+intelbras-110b      intelbras-1420g     intelbras-default
+intelbras-110g      intelbras-142ng
+intelbras-olt> onu set gpon 1 onu 128 id 1 meprof intelbras-
+intelbras-110       intelbras-121w      intelbras-142nw
+intelbras-110b      intelbras-1420g     intelbras-default
+intelbras-110g      intelbras-142ng
+intelbras-olt> onu set gpon 1 onu 128 id 1 meprof intelbras-
+
+
+110
+
+intelbras-olt> onu set gpon 1 onu 128 id 1 meprof intelbras-110
+Onu 128 successfully enabled with serial number ZNTS43020000
+intelbras-olt>
+
+142ng
+
+intelbras-olt> onu set gpon 1 onu 64 id 3 meprof intelbras-142ng
+Onu 64 successfully enabled with serial number ZNTS03726863
+intelbras-olt>
+
+inventory
+---------
+
+intelbras-olt> onu inventory
+                 Serial     Vendor    Model      ONT           Software
+ ONU Name         Number      ID       ID      Version          Version
+=============== =========== ======= ======= =============== ===============
+gpon 1 onu 64   03726863    ZNTS    142NG   S3.1.243        S3.1.243
+gpon 1 onu 128  43020000    ITBS    110Gi   9100114         1.0.15
+intelbras-olt> onu inventory gpon 1
+                 Serial     Vendor    Model      ONT           Software
+ ONU Name         Number      ID       ID      Version          Version
+=============== =========== ======= ======= =============== ===============
+gpon 1 onu 64   03726863    ZNTS    142NG   S3.1.243        S3.1.243
+gpon 1 onu 128  43020000    ITBS    110Gi   9100114         1.0.15
+intelbras-olt>
+
+
+
+
+Bridges
+-------
+
+intelbras-olt> bridge show
+<enter>   eth       linkagg   onu       state     xeth
+blk       gpon      mac       rules     vlan
+intelbras-olt> bridge show
+% No bridge created
+
+
+
+intelbras-olt> bridge
+bridge        bridge-path
+intelbras-olt> bridge add
+eth       gpon      linkagg   xeth
+intelbras-olt> bridge add eth
+                        Value between 1 and 8
+intelbras-olt> bridge add eth
+                        Value between 1 and 8
+intelbras-olt> bridge add eth 2
+downlink    intralink   tls         uplink
+intelbras-olt> bridge add eth 2 uplink vlan
+                           Value between 2 and 4094
+intelbras-olt> bridge add eth 2 uplink vlan 1000
+tagged     untagged
+intelbras-olt> bridge add eth 2 uplink vlan 1000 untagged
+Adding bridge eth 2 vlan 1000 .............................. Ok
+intelbras-olt>
+
+
+intelbras-olt> bridge add eth 2 uplink vlan 1000 untagged
+
+intelbras-olt> bridge add
+eth       gpon      linkagg   xeth
+intelbras-olt> bridge add gpon
+                        Value between 1 and 8
+intelbras-olt> bridge add gpon 1 onu 128
+downlink   tls
+intelbras-olt> bridge add gpon 1 onu 128 downlink vlan 1000 tagged
+<enter>     data        eth         gtp         rg          uni-vlan
+cos         encrypted   gem         pktrule     sip
+intelbras-olt> bridge add gpon 1 onu 128 downlink vlan 1000 tagged
+<enter>     data        eth         gtp         rg          uni-vlan
+cos         encrypted   gem         pktrule     sip
+intelbras-olt> bridge add gpon 1 onu 128 downlink vlan 1000 tagged eth
+                        Value between 1 and 8
+intelbras-olt> bridge add gpon 1 onu 128 downlink vlan 1000 tagged eth 1
+Adding bridge gpon 1 onu 128 vlan 1000 ..................... Ok
+intelbras-olt>
+
+intelbras-olt> bridge add gpon 1 onu 128 downlink vlan 1000 tagged eth 1
+
+intelbras-olt> bridge show
+             VLAN/
+  Type     UNI-VLAN      Mode               Bridge             State
+========= =========== ========== ============================ =======
+uplink    1000/--     untagged   eth 2 vlan 1000              Up
+tls       2000/--     tagged     gpon 1 onu 1 gem 259         Down
+tls       2000/--     tagged     gpon 1 onu 64 gem 258        Up
+downlink  1000/--     tagged     gpon 1 onu 128 gem 257       Up
+=====================================================================
+Total: 4
+
+
+
+
+data 
+----
+
+intelbras-olt> date set
+                        Example: yyyymmddhhmm
+intelbras-olt> date set 201903191036
+intelbras-olt> date
+<enter>   set
+intelbras-olt> date
+<enter>   set
+intelbras-olt> date
+2019-03-19 10:36:04
+intelbras-olt>
+
+
+alarmes
+-------
+
+alarm clear
+
+
+
+
+intelbras-olt> olt show port
+GPON Temperature Voltage Tx Bias Current  Tx Power    Rx Power   End Of Life Status
+==== =========== ======= =============== =========== =========== ==================
+ 1       31 C    3.262 V      13 mA       3.772 dBm   -1.462 dBm         OK
+ 2        --        --          --            --          --     SFP is Not Present
+ 3        --        --          --            --          --     SFP is Not Present
+ 4        --        --          --            --          --     SFP is Not Present
+ 5        --        --          --            --          --     SFP is Not Present
+ 6        --        --          --            --          --     SFP is Not Present
+ 7        --        --          --            --          --     SFP is Not Present
+ 8       32 C    3.143 V      36 mA       4.124 dBm    -inf dBm          OK
+intelbras-olt>
+
+
+intelbras-olt> shelfctrl monitor
+ Shelf                   Status
+----------------------------------------------------------
+Uptime                   2 hours, 8 minutes
+
+ Temperature Sensor      Celsius(C)
+----------------------------------------------------------
+Sensor 1                 29.250 C
+Sensor 2                 28.875 C
+Temperature reading      Normal
+
+ Fans                    Status
+----------------------------------------------------------
+Fan 1                    Detected
+Fan 2                    Detected
+Fan 3                    Detected
+
+intelbras-olt>
+
+
+
+
+Port
+----
+
+intelbras-olt> port show gpon 1
+Administrative status : Up
+Operational status    : Up
+Rate in Mbps          : 2500
+Duplex                : Full
+Storm Control
+            Broadcast : 125 mbps
+       IPv4 Multicast : 500 mbps
+       IPv6 Multicast : 500 mbps
+
+intelbras-olt> port show eth 2
+Administrative status : Up
+Operational status    : Up
+Rate in Mbps          : 100
+Duplex                : Full
+Storm Control
+            Broadcast : 100 mbps
+       IPv4 Multicast : 400 mbps
+       IPv6 Multicast : 400 mbps
+
+intelbras-olt>
+
+intelbras-olt> port stats eth
+                        Value between 1 and 8
+intelbras-olt> port stats eth 2
+Interface Name                    : eth 2
+Operational Status                : Up
+Received Bytes                    : 1580990785
+Received Unicast Packets          : 1275104
+Received Multicast Packets        : 72899
+Received Broadcast Packets        : 55515
+Received Errors                   : 0
+Transmitted Bytes                 : 839562158
+Transmitted Unicast Packets       : 1313749
+Transmitted Multicast Packets     : 7284
+Transmitted Broadcast Packets     : 1449
+Transmitted Errors                : 0
+Speed Bits per Second             : *** n/a ***
+Speed Megabits per Second         : 100
+
+intelbras-olt>
+
+
+Port Description
+----------------
+
+intelbras-olt> port description del gpon 1
+intelbras-olt> port description add gpon 1 text pon1-principal
+intelbras-olt> port description add
+eth       gpon      linkagg   xeth
+intelbras-olt> port description add
+eth       gpon      linkagg   xeth
+intelbras-olt> port description add eth
+                        Value between 1 and 8
+intelbras-olt> port description add eth 2 link-provedor-uplink
+%% Invalid command
+intelbras-olt> port description add eth 2 uplink-provedor
+%% Invalid command
+intelbras-olt> port description add eth 2 text uplink-provedor
+intelbras-olt> port description show
+   Interface               Description
+=============== =================================
+gpon 1          pon1-principal
+eth 2           uplink-provedor
+intelbras-olt>
+
+
+interface
+---------
+
+intelbras-olt> interface show
+                      <enter>
+intelbras-olt> interface show
+Interface    Address            VLAN Dest Address      bridge
+============ ================== ==== ================= ======
+out of band  192.168.10.1/24       1 18:0d:2c:16:4f:5a   --
+intelbras-olt>
+
+
+
+card
+----
+
+intelbras-olt> card stats
+ ------ cpu % utilization ------    ------ memory (KB) ------       Card Memory         Uptime  
+ slot     idle       usage        %Used      Total       Avail       Status         ddd:hh:mm:ss     s/w version
+======   =======    =======      =======   =========   ==========   ==============  ==============  ==============
+ 1        68.5       31.5         17.8      1028344     705024      1 - OK          0:2:17:39       1.114
+intelbras-olt>
+
+
+
+cpe-mgr
+-------
+
+intelbras-olt> cpe-mgr show
+        CPE Manager public side interface:
+                 Interface   Public IP        VLAN
+                -----------------------------------
+                out of band  192.168.10.1/24  1
+
+        CPE Manager local management network:
+                IP:    1.0.0.1/8
+
+        No CPE's currently configured in CPE Manager.
+
+intelbras-olt> cpe-mgr show local
+% The following parameters are required:
+gpon                          Set a GPON port
+
+intelbras-olt> cpe-mgr show local gpon
+                        Value between 1 and 8
+intelbras-olt> cpe-mgr show
+<enter>   local
+intelbras-olt> cpe-mgr show
+<enter>   local
+intelbras-olt> cpe-mgr show local gpon
+                        Value between 1 and 8
+intelbras-olt> cpe-mgr show local gpon 1
+% The following parameters are required:
+onu                           Set a ONU id
+
+intelbras-olt> cpe-mgr
+add      delete   show
+intelbras-olt> cpe-mgr
+add      delete   show
+intelbras-olt> cpe-mgr add local
+local           local-network
+intelbras-olt> cpe-mgr add local
+local           local-network
+intelbras-olt> cpe-mgr add local
+local           local-network
+intelbras-olt> cpe-mgr add local
+% The following parameters are required:
+gpon                          Set a GPON port
+
+intelbras-olt> cpe-mgr add local
+local           local-network
+intelbras-olt> cpe-mgr add local gpon
+                        Value between 1 and 8
+intelbras-olt> cpe-mgr add local gpon 1 onu
+                          Value between 1 and 128
+intelbras-olt> cpe-mgr add local gpon 1 onu 64 gtp
+                          Value between 0 and 128
+intelbras-olt> cpe-mgr add local gpon 1 onu 64 gtp
+                          Value between 0 and 128
+intelbras-olt> cpe-mgr add local gpon 1 onu 64 gtp 0
+<enter>   gem
+intelbras-olt> cpe-mgr add local gpon 1 onu 64 gtp 0 gem
+                             Value between 257 and 4093
+intelbras-olt> cpe-mgr add local gpon 1 onu 64 gtp 0 gem
+                             Value between 257 and 4093
+intelbras-olt> cpe-mgr add local gpon 1 onu 64 gtp 0
+intelbras-olt> 2019-03-19 12:23:43 gponconfd [429]: interface add sanity check failed
+2019-03-19 12:23:43 audit NETFILTER_CFG table=nat family=2 entries=6
+2019-03-19 12:23:43 kernel audit: type=1325 audit(1553009023.582:8): table=nat family=2 entries=6
+2019-03-19 12:23:43 audit NETFILTER_CFG table=nat family=2 entries=7
+2019-03-19 12:23:43 kernel audit: type=1325 audit(1553009023.612:9): table=nat family=2 entries=7
+2019-03-19 12:23:43 audit NETFILTER_CFG table=nat family=2 entries=8
+2019-03-19 12:23:43 kernel audit: type=1325 audit(1553009023.632:10): table=nat family=2 entries=8
+
+intelbras-olt>
+intelbras-olt> cpe-mgr show local gpon 1
+% The following parameters are required:
+onu                           Set a ONU id
+
+intelbras-olt> cpe-mgr show
+        CPE Manager public side interface:
+                 Interface   Public IP        VLAN
+                -----------------------------------
+                out of band  192.168.10.1/24  1
+
+        CPE Manager local management network:
+                IP:    1.0.0.1/8
+
+
+        Managed CPE Interface Configuration:
+ Interface                      Local IP        Telnet  HTTP
+-------------------------------------------------------------
+gpon 1 onu 64  gem 260  [UP]    1.1.16.65       51921   51922
+intelbras-olt>
+
+
+
+
+backup
+------
+
+intelbras-olt> backup file
+                                         A string with maximum of 64 characters
+intelbras-olt> backup file claudemir-olt-bkp
+The configuration was saved in file: claudemir-olt-bkp.conf
+intelbras-olt>
+
+
+Removendo ont 142ng
+-------------------
+
+Dando alarme e falaha namedição do sinal -1.0 dbm
+
+intelbras-olt> onu inventory gpon 1 onu 64
+                 Serial     Vendor    Model      ONT           Software
+ ONU Name         Number      ID       ID      Version          Version
+=============== =========== ======= ======= =============== ===============
+gpon 1 onu 64   03726863    ZNTS    142NG   S3.1.243        S3.1.243
+intelbras-olt> onu delete gpon 1 onu 64
+Ok to delete ONU 64 at GPON 1 and all of it's configuration? [yes] or [no]:yes
+Do you want to exit from this request? (yes or no) [yes]: no
+Are you sure? (yes or no) [no]: yes
+deleting ONU at gpon 1 onu 64
+intelbras-olt>
+
+
+** Assim o LED de FAULT, amarelo da OLT ficava piscando direto!
+
+Removendo o LED apagou... sem alarmes criticos!!!!
+
+intelbras-olt> alarm show
+************   Central Alarm Manager   ************
+    Alarm Count     : 0
+    History Count   : 1
+
+
+********************************************** Alarms **************************************************
+ Num        AlarmType            ResourceId               Info        AlarmSeverity         Date
+------  ----------------  -----------------------  -----------------  -------------  -------------------
+
+
+
+********************************************* History **************************************************
+ Num        AlarmType            ResourceId               Info        AlarmSeverity         Date
+------  ----------------  -----------------------  -----------------  -------------  -------------------
+     1  Power Optical     gpon 1 onu 64            -1dBm              Critical       2019-03-19 12:49:27
+
+intelbras-olt> alarm clear
+intelbras-olt> alarm show
+************   Central Alarm Manager   ************
+    Alarm Count     : 0
+    History Count   : 0
+
+
+********************************************** Alarms **************************************************
+ Num        AlarmType            ResourceId               Info        AlarmSeverity         Date
+------  ----------------  -----------------------  -----------------  -------------  -------------------
+
+
+
+********************************************* History **************************************************
+ Num        AlarmType            ResourceId               Info        AlarmSeverity         Date
+------  ----------------  -----------------------  -----------------  -------------  -------------------
+
+intelbras-olt>
+
+
+
+
+
+
+
+

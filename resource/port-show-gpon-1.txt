@@ -1,0 +1,8 @@
+Administrative status : Up
+Operational status    : Up
+Rate in Mbps          : 2500
+Duplex                : Full
+Storm Control
+            Broadcast : 125 mbps
+       IPv4 Multicast : 500 mbps
+       IPv6 Multicast : 500 mbps
